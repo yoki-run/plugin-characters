@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/yoki-run/yoki/main/plugin.schema.json",
+  "name": "Characters",
+  "keyword": "characters",
+  "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='#7C4DFF'/><text x='12' y='17' text-anchor='middle' font-family='Segoe UI, sans-serif' font-size='14' font-weight='700' fill='#fff'>Ω</text></svg>",
+  "description": "Emoji picker and Unicode symbol search — copy any glyph to the clipboard",
+  "version": "1.0.0",
+  "author": "Yoki",
+  "homepage": "https://yoki.run",
+  "license": "MIT",
+  "categories": ["productivity", "tools"],
+  "yoki_min": "1.0.9.8",
+  "protocol": "v2",
+  "permissions": {
+    "clipboard": true
+  },
+  "commands": [
+    {
+      "name": "emoji",
+      "title": "Emoji",
+      "description": "Search emojis by name or keyword — copy to clipboard",
+      "mode": "grid",
+      "exec": "emoji.js",
+      "keywords": ["emoji", "e", ":"],
+      "takes_query": true
+    },
+    {
+      "name": "u",
+      "title": "Unicode symbol",
+      "description": "Search arrows, math, currency, greek letters, box-drawing — copy any symbol",
+      "mode": "list",
+      "exec": "unicode.js",
+      "keywords": ["u", "unicode", "sym", "symbol"],
+      "takes_query": true
+    }
+  ]
+}
