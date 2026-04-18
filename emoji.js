@@ -24,9 +24,14 @@ async function main() {
 
   const results = filterByQuery(data, query, GRID_LIMIT, e => e.emoji + " " + e.name + " " + e.keywords);
 
+  // icon holds the glyph so the host renders it through the grid-cell
+  // icon slot (24px). Putting it in `title` instead renders through
+  // the 10px caption slot, which is unreadable. title carries the
+  // name so users can still see "grinning face" below the glyph.
   const items = results.map((e, i) => ({
     id: `emoji-${i}`,
-    title: e.emoji,
+    icon: e.emoji,
+    title: e.name,
     subtitle: e.name,
     value: e.emoji,
     actions: [
